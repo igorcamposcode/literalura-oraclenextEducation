@@ -15,8 +15,8 @@ public class Livro {
     @Id
     private Long id;
     @Column(unique = true)
-    private static String title;
-    @OneToMany(mappedBy = "livro", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private String title;
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Person> authors;
     private List<String> languages;
     @JsonAlias("download_count")  private int downloadCount;
@@ -29,7 +29,7 @@ public class Livro {
         this.id = id;
     }
 
-    public static String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -65,12 +65,12 @@ public class Livro {
     @Override
     public String toString() {
         return String.format(
-                        " encontrado\n" +
+                "📚 Livro encontrado:\n" +
                         "------------------------------------------------\n" +
-                        "Título: %s\n" +
-                        "Autores: %s\n" +
-                        "Idiomas: %s\n" +
-                        "Nº de Downloads: %d\n" +
+                        "📖 Título: %s\n" +
+                        "✍️ Autores: %s\n" +
+                        "🌍 Idiomas: %s\n" +
+                        "📥 Nº Downloads: %d\n" +
                         "------------------------------------------------\n",
                 title, authors, languages, downloadCount
         );

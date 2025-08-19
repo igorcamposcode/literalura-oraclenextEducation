@@ -23,17 +23,17 @@ public class Person {
     @ManyToOne
     @JoinColumn(name = "book_id")
     @JsonBackReference
-    private Livro livro;
+    private Livro book;
 
 
     public Person() {}
 
-    public Person(Long id, String name, Integer birthYear, Integer deathYear, Livro livro) {
+    public Person(Long id, String name, Integer birthYear, Integer deathYear, Livro book) {
         this.id = id;
         this.name = name;
         this.birthYear = birthYear;
         this.deathYear = deathYear;
-        this.livro = livro;
+        this.book = book;
     }
 
     public Long getId() {
@@ -69,16 +69,17 @@ public class Person {
     }
 
     public Livro getBook() {
-        return livro;
+        return book;
     }
 
-    public void setBook(Livro livro) {
-        this.livro = livro;
+    public void setBook(Livro book) {
+        this.book = book;
     }
+
     @Override
     public String toString() {
         return String.format(
-                "🧑 Autor:\n" +
+                                        "Autor:\n" +
                         "               ---------------------------\n" +
                         "                Nome: %s\n" +
                         "                Ano de Nascimento: %s\n" +
