@@ -65,12 +65,12 @@ public class Livro {
     @Override
     public String toString() {
         return String.format(
-                "📚 Livro encontrado:\n" +
+                        "Livro encontrado:\n" +
                         "------------------------------------------------\n" +
-                        "📖 Título: %s\n" +
-                        "✍️ Autores: %s\n" +
-                        "🌍 Idiomas: %s\n" +
-                        "📥 Nº Downloads: %d\n" +
+                        "Título: %s\n" +
+                        "Autores: %s\n" +
+                        "Idiomas: %s\n" +
+                        "Nº Downloads: %d\n" +
                         "------------------------------------------------\n",
                 title, authors, languages, downloadCount
         );
